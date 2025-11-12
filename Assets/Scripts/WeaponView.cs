@@ -14,6 +14,15 @@ public class WeaponView : MonoBehaviour
     
     public event UnityAction<Weapon, WeaponView> SellButtonClick;
 
+    public void Render(Weapon weapon)
+    {
+        _weapon = weapon;
+
+        _lable.text = weapon.Label;
+        _price.text = weapon.Price.ToString();
+        _icon.sprite = weapon.Icon;
+    }
+    
     private void OnEnable()
     {
         _sellButton.onClick.AddListener(OnButtonClick);
@@ -32,15 +41,6 @@ public class WeaponView : MonoBehaviour
         {
             _sellButton.interactable = false;
         }
-    }
-
-    public void Render(Weapon weapon)
-    {
-        _weapon = weapon;
-
-        _lable.text = weapon.Label;
-        _price.text = weapon.Price.ToString();
-        _icon.sprite = weapon.Icon;
     }
 
     private void OnButtonClick()

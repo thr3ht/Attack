@@ -5,6 +5,8 @@ public class CelebrationState : State
 {
     private Animator _animator;
     
+    private const string CelebrationAnimation = "Celebration";
+    
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -12,7 +14,7 @@ public class CelebrationState : State
 
     private void OnEnable()
     {
-        _animator.Play("Celebration");
+        _animator.Play(CelebrationAnimation);
     }
 
     private void OnDisable()

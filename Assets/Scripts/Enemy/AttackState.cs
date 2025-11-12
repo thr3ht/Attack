@@ -8,6 +8,8 @@ public class AttackState : State
     
     private float _lastAttackTime;
     private Animator _animator;
+    
+    private const string AttackAnimation = "Attack";
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class AttackState : State
 
     private void Attack(Player target)
     {
-        _animator.Play("Attack");
+        _animator.Play(AttackAnimation);
         target.ApplyDamage(_damage);
     }
 }
